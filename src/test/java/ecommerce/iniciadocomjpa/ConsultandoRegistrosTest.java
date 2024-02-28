@@ -1,36 +1,11 @@
-package ecommerce;
+package ecommerce.iniciadocomjpa;
 
-import jakarta.persistence.EntityManager;
-import jakarta.persistence.EntityManagerFactory;
-import jakarta.persistence.Persistence;
+import ecommerce.EntityManagerTest;
 import org.example.model.Produto;
-import org.junit.*;
+import org.junit.Assert;
+import org.junit.Test;
 
-public class ConsultandoRegistrosTest {
-    private static EntityManagerFactory entityManagerFactory;
-
-    private EntityManager entityManager;
-
-    @BeforeClass
-    public static void setUpBeforeClass() {
-        entityManagerFactory = Persistence
-                .createEntityManagerFactory("Ecommerce-PU");
-    }
-
-    @AfterClass
-    public static void tearDownAfterClass() {
-        entityManagerFactory.close();
-    }
-
-    @Before
-    public void setUp() {
-        entityManager = entityManagerFactory.createEntityManager();
-    }
-
-    @After
-    public void tearDown() {
-        entityManager.close();
-    }
+public class ConsultandoRegistrosTest extends EntityManagerTest {
 
     @Test
     public void busarPorIdentificador() {
