@@ -1,1 +1,2 @@
 insert into produto (id, nome, descricao, preco) values (1, 'Kindle', 'Conheça o novo Kindle, único no mercado.', 499.0);
+insert into Produto (id, nome, preco, descricao) values (3, 'Câmera GoPro Hero 7', 1400.0, 'Desempenho 2x melhor.');
