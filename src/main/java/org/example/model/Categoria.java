@@ -11,10 +11,9 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor(force = true)
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Cliente {
+public class Categoria {
     @Id
     @EqualsAndHashCode.Include
     private Long id;
     private String nome;
-    private SexoCliente sexoCliente;
 }

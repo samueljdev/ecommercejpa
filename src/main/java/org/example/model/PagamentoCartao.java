@@ -4,6 +4,8 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import lombok.*;
 
+import java.math.BigDecimal;
+
 @Getter
 @Setter
 @Entity
@@ -11,10 +13,11 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor(force = true)
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Cliente {
+public class PagamentoCartao {
     @Id
     @EqualsAndHashCode.Include
     private Long id;
-    private String nome;
-    private SexoCliente sexoCliente;
+    private Integer pedido_id;
+    private StatusPagamento statusPagamento;
+    private String numero;
 }

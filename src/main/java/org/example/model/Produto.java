@@ -14,9 +14,9 @@ import java.math.BigDecimal;
 @NoArgsConstructor(force = true)
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 public class Produto {
-
     @Id
-    private Integer id;
+    @EqualsAndHashCode.Include
+    private Long id;
     private String nome;
     private String descricao;
     private BigDecimal preco;

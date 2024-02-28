@@ -11,10 +11,11 @@ import lombok.*;
 @AllArgsConstructor
 @NoArgsConstructor(force = true)
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
-public class Cliente {
+public class PagamentoBoleto {
     @Id
     @EqualsAndHashCode.Include
     private Long id;
-    private String nome;
-    private SexoCliente sexoCliente;
+    private Integer pedido_id;
+    private StatusPagamento statusPagamento;
+    private String codigoBarras;
 }
