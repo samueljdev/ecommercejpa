@@ -3,10 +3,8 @@ package ecommerce;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.EntityManagerFactory;
 import jakarta.persistence.Persistence;
-import org.junit.After;
-import org.junit.AfterClass;
-import org.junit.Before;
-import org.junit.BeforeClass;
+import org.example.model.Produto;
+import org.junit.*;
 
 public class ConsultandoRegistrosTest {
     private static EntityManagerFactory entityManagerFactory;
@@ -32,5 +30,19 @@ public class ConsultandoRegistrosTest {
     @After
     public void tearDown() {
         entityManager.close();
+    }
+
+    @Test
+    public void busarPorIdentificador() {
+        Produto produto = entityManager.find(Produto.class, 1);
+        Assert.assertNotNull(produto);
+        Assert.assertEquals("Kindle", produto.getNome());
+    }
+
+    @Test
+    public void busarPorGetReference() {
+        Produto produto = entityManager.getReference(Produto.class, 1);
+        Assert.assertNotNull(produto);
+        Assert.assertEquals("Kindle", produto.getNome());
     }
 }
