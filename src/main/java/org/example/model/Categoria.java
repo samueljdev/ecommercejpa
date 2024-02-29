@@ -14,7 +14,9 @@ import lombok.*;
 public class Categoria {
     @Id
     @EqualsAndHashCode.Include
-    @GeneratedValue(strategy = GenerationType.AUTO)
+//    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "seq")
+    @SequenceGenerator(name = "seq", sequenceName = "categoria_sequence_pk")
     private Integer id;
 
     private String nome;
