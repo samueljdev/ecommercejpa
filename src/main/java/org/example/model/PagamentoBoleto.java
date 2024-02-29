@@ -12,11 +12,13 @@ import lombok.*;
 @EqualsAndHashCode(onlyExplicitlyIncluded = true)
 @Table(name = "tb_pagamento_boleto")
 public class PagamentoBoleto {
+
     @Id
     @EqualsAndHashCode.Include
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    @Column(name = "pedido_id")
 
+    @Column(name = "pedido_id")
     private Integer pedido_id;
 
     @Enumerated(EnumType.STRING)
