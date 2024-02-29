@@ -2,6 +2,7 @@ package ecommerce.iniciadocomjpa;
 
 import ecommerce.EntityManagerTest;
 import org.example.model.Cliente;
+import org.example.model.SexoCliente;
 import org.junit.Assert;
 import org.junit.Test;
 
@@ -11,6 +12,7 @@ public class PrimeiroCrudTest extends EntityManagerTest {
         Cliente cliente = new Cliente();
         cliente.setId(3);
         cliente.setNome("Cintia Santos");
+        cliente.setSexo(SexoCliente.FEMININO);
 
         entityManager.getTransaction().begin();
         entityManager.persist(cliente);
@@ -23,7 +25,7 @@ public class PrimeiroCrudTest extends EntityManagerTest {
 
     @Test
     public void busarPorIdentificador() {
-        Cliente clinteVerificacao = entityManager.find(Cliente.class, 2);
+        Cliente clinteVerificacao = entityManager.find(Cliente.class, 1);
 
         Assert.assertNotNull(clinteVerificacao);
         Assert.assertEquals("Fernanda Lemos", clinteVerificacao.getNome());
@@ -34,6 +36,7 @@ public class PrimeiroCrudTest extends EntityManagerTest {
         Cliente cliente = new Cliente();
         cliente.setId(1);
         cliente.setNome("Fernanda Lemos");
+        cliente.setSexo(SexoCliente.FEMININO);
 
         entityManager.getTransaction().begin();
         entityManager.merge(cliente);

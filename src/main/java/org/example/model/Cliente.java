@@ -1,8 +1,6 @@
 package org.example.model;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
@@ -16,9 +14,10 @@ import lombok.*;
 public class Cliente {
     @Id
     @EqualsAndHashCode.Include
-    private Long id;
+    private Integer id;
 
     private String nome;
 
-    private SexoCliente sexoCliente;
+    @Enumerated(EnumType.STRING)
+    private SexoCliente sexo;
 }

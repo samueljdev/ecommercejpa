@@ -16,7 +16,7 @@ import lombok.*;
 public class Categoria {
     @Id
     @EqualsAndHashCode.Include
-    private Long id;
+    private Integer id;
 
     private String nome;
 }

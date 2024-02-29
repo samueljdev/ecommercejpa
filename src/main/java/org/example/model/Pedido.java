@@ -1,9 +1,6 @@
 package org.example.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 import java.math.BigDecimal;
@@ -20,7 +17,7 @@ import java.time.LocalDateTime;
 public class Pedido {
     @Id
     @EqualsAndHashCode.Include
-    private Long id;
+    private Integer id;
 
     @Column(name = "data_pedido")
     private LocalDateTime dataPedido;
@@ -31,7 +28,7 @@ public class Pedido {
     @Column(name = "notafiscal_id")
     private Integer notafiscal_id;
 
-    @Column(name = "status_pedido")
+    @Enumerated(EnumType.STRING)
     private StatusPedido statusPedido;
 
     private BigDecimal total;

@@ -17,7 +17,7 @@ import lombok.*;
 public class Estoque {
     @Id
     @EqualsAndHashCode.Include
-    private Long id;
+    private Integer id;
 
     @Column(name = "produto_id")
     private Integer produto_id;

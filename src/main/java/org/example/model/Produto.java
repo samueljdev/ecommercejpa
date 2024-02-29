@@ -18,7 +18,7 @@ import java.math.BigDecimal;
 public class Produto {
     @Id
     @EqualsAndHashCode.Include
-    private Long id;
+    private Integer id;
 
     private String nome;
 

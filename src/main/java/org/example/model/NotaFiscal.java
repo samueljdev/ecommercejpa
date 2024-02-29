@@ -19,7 +19,7 @@ import java.util.Date;
 public class NotaFiscal {
     @Id
     @EqualsAndHashCode.Include
-    private Long id;
+    private Integer id;
 
     @Column(name = "pedido_id")
     private Integer pedido_id;

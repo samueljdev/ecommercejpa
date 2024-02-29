@@ -1,9 +1,6 @@
 package org.example.model;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.Id;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
@@ -17,12 +14,12 @@ import lombok.*;
 public class PagamentoBoleto {
     @Id
     @EqualsAndHashCode.Include
-    private Long id;
+    private Integer id;
     @Column(name = "pedido_id")
 
     private Integer pedido_id;
 
-    @Column(name = "status_pagamento")
+    @Enumerated(EnumType.STRING)
     private StatusPagamento statusPagamento;
 
     @Column(name = "codigo_barras")
