@@ -21,7 +21,7 @@ public class NotaFiscal {
     private Integer id;
 
     @Column(name = "pedido_id")
-    private Integer pedido_id;
+    private Integer pedido;
 
     private String xml;
 

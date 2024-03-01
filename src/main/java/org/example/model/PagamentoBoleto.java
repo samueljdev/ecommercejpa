@@ -19,10 +19,10 @@ public class PagamentoBoleto {
     private Integer id;
 
     @Column(name = "pedido_id")
-    private Integer pedido_id;
+    private Integer pedido;
 
     @Enumerated(EnumType.STRING)
-    private StatusPagamento statusPagamento;
+    private StatusPagamento status;
 
     @Column(name = "codigo_barras")
     private String codigoBarras;

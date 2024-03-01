@@ -21,10 +21,10 @@ public class ItemPedido {
     private Integer id;
 
     @Column(name = "pedido_id")
-    private Integer pedido_id;
+    private Integer pedido;
 
     @Column(name = "produto_id")
-    private Integer produto_id;
+    private Integer produto;
 
     @Column(name = "preco_produto")
     private BigDecimal precoProduto;

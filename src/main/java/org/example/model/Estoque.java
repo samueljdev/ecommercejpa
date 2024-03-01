@@ -19,7 +19,7 @@ public class Estoque {
     private Integer id;
 
     @Column(name = "produto_id")
-    private Integer produto_id;
+    private Integer produto;
 
     private Integer quantidade;
 }
