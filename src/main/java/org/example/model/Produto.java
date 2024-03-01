@@ -22,7 +22,7 @@ public class Produto {
     private Integer id;
 
     @OneToMany(mappedBy = "produto")
-    private List<ItemPedido> itemPedidos;
+    private List<ItemPedido> itens;
 
     private String nome;
 

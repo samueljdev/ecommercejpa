@@ -30,7 +30,7 @@ public class Pedido {
     private Integer notafiscal;
 
     @OneToMany(mappedBy = "pedido")
-    private List<ItemPedido> itemPedidos;
+    private List<ItemPedido> itens;
 
     @Column(name = "data_pedido")
     private LocalDateTime dataPedido;
