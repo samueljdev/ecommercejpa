@@ -3,6 +3,8 @@ package org.example.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
 @Getter
 @Setter
 @Entity
@@ -19,4 +21,7 @@ public class Categoria {
     private Integer id;
 
     private String nome;
+
+    @ManyToMany(mappedBy = "categorias")
+    private List<Produto> produtos;
 }
