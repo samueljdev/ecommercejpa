@@ -26,11 +26,23 @@ public class Pedido {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
-    @Column(name = "notafiscal_id")
-    private Integer notafiscal;
-
     @OneToMany(mappedBy = "pedido")
     private List<ItemPedido> itens;
+
+    @OneToOne(mappedBy = "pedido")
+    private NotaFiscal notafiscal;
+
+    @OneToOne(mappedBy = "pedido")
+    private PagamentoCartao pagamentoCartao;
+
+    @OneToOne(mappedBy = "pedido")
+    private PagamentoBoleto pagamentoBoleto;
+
+    @Embedded
+    private EnderecoEntregaPedido enderecoEntrega;
+
+    @Enumerated(EnumType.STRING)
+    private StatusPedido status;
 
     @Column(name = "data_pedido")
     private LocalDateTime dataPedido;
@@ -38,11 +50,5 @@ public class Pedido {
     @Column(name = "data_conclusao")
     private LocalDateTime dataConclusao;
 
-    @Enumerated(EnumType.STRING)
-    private StatusPedido status;
-
     private BigDecimal total;
-
-    @Embedded
-    private EnderecoEntregaPedido enderecoEntrega;
 }
